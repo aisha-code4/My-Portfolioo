@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ayesha Sarwar - Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #f5efe7;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    nav {
+      width: 100%;
+      text-align: center;
+      background: #e8dcc9;
+      padding: 18px 0 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px #e8dcc9;
+    }
+    nav a {
+      margin: 0 30px;
+      text-decoration: none;
+      color: #6d4c1e;
+      font-weight: bold;
+      font-size: 18px;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #b89c6a;
+      text-decoration: underline;
+    }
+
+    header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 8vw 40px 8vw;
+      background: linear-gradient(90deg, #f5efe7 60%, #e8dcc9 100%);
+      min-height: 350px;
+      gap: 40px;
+      text-align: left;
+    }
+    .intro {
+      max-width: 100%;
+      padding-right: 30px;
+      text-align: left;
+    }
+    .intro h1 {
+      font-size: 54px;
+      margin: 0 0 10px 0;
+      color: #6d4c1e;
+      letter-spacing: 2px;
+      font-family: Georgia, serif;
+      font-weight: bold;
+      text-shadow: none;
+    }
+    .intro h2 {
+      font-weight: normal;
+      font-size: 22px;
+      color: #b89c6a;
+      margin-top: 0;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+    .profile-card {
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 8px 32px #c9b89777;
+      border: 6px solid #e8dcc9;
+      padding: 18px 18px 10px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 220px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .profile-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 12px 36px #b89c6a44;
+    }
+    .profile-img {
+      max-width: 180px;
+      border-radius: 16px;
+      box-shadow: none;
+      border: none;
+      background: none;
+      margin-bottom: 0;
+      display: block;
+    }
+
+    section {
+      padding: 50px 8vw;
+      border-radius: 24px;
+      margin: 40px auto;
+      background: #fff;
+      box-shadow: 0 4px 24px #e8dcc966;
+      max-width: 900px;
+    }
+    section h3 {
+      font-size: 32px;
+      margin-bottom: 18px;
+      color: #6d4c1e;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    /* About Section */
+    #about p {
+      font-size: 20px;
+      text-align: center;
+      color: #444;
+      margin: 0 auto;
+      max-width: 700px;
+    }
+
+    /* Education Section */
+    .education-section {
+      background: #f5efe7;
+      box-shadow: none;
+      margin-top: 0;
+    }
+    .education-section table {
+      margin: 0 auto;
+      width: 70%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px #e8dcc966;
+    }
+    .education-section th, .education-section td {
+      border: 1px solid #d6c4aa;
+      padding: 16px;
+      text-align: center;
+      font-size: 18px;
+    }
+    .education-section th {
+      background: #e8dcc9;
+      color: #6d4c1e;
+      font-size: 20px;
+    }
+
+    /* Skills Section */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .skill-card {
+      background: linear-gradient(135deg, #e8dcc9 60%, #f5efe7 100%);
+      border-radius: 16px;
+      box-shadow: 0 2px 12px #e8dcc966;
+      padding: 28px 36px;
+      font-size: 20px;
+      color: #6d4c1e;
+      font-weight: bold;
+      min-width: 180px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .skill-card:hover {
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 8px 32px #b89c6a44;
+      background: linear-gradient(135deg, #f5efe7 60%, #e8dcc9 100%);
+    }
+
+    /* Projects Section */
+    .projects-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .project-card {
+      background: linear-gradient(135deg, #e8dcc9 60%, #f5efe7 100%);
+      border-radius: 16px;
+      box-shadow: 0 2px 12px #e8dcc966;
+      padding: 28px 36px;
+      font-size: 20px;
+      color: #6d4c1e;
+      font-weight: bold;
+      min-width: 220px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .project-card:hover {
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 8px 32px #b89c6a44;
+      background: linear-gradient(135deg, #f5efe7 60%, #e8dcc9 100%);
+    }
+
+    /* Contact Section */
+    .contact-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 60px;
+      margin-top: 30px;
+    }
+    .contact-details div {
+      background: #e8dcc9;
+      border-radius: 16px;
+      padding: 28px 36px;
+      font-size: 18px;
+      color: #6d4c1e;
+      min-width: 220px;
+      box-shadow: 0 2px 12px #e8dcc966;
+      text-align: left;
+    }
+    .contact-details a {
+      color: #6d4c1e;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        flex-direction: column-reverse;
+        padding: 40px 4vw 20px 4vw;
+        text-align: center;
+        gap: 0;
+      }
+      .intro {
+        max-width: 100%;
+        padding-right: 0;
+        text-align: center;
+      }
+      .profile-card {
+        margin-bottom: 30px;
+      }
+      section {
+        padding: 30px 2vw;
+      }
+      .education-section table {
+        width: 95%;
+      }
+    }
+    @media (max-width: 600px) {
+      .skills-list, .projects-list, .contact-details {
+        flex-direction: column;
+        gap: 18px;
+      }
+      .skill-card, .project-card, .contact-details div {
+        min-width: unset;
+        width: 100%;
+        padding: 18px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <div class="intro">
+      <h1>AYESHA<br>SARWAR</h1>
+      <h2>DESIGNER & DEVELOPER</h2>
+    </div>
+    <div class="profile-card">
+      <img src="aysha.png" alt="Ayesha Sarwar" class="profile-img">
+    </div>
+  </header>
+
+  <section id="about">
+    <h3>About</h3>
+    <p>
+      Hello! My name is Ayesha Sarwar. I am a passionate and curious student, currently exploring the world of Software Engineering. With a background in medical sciences, I discovered my interest in programming and decided to follow this new path with full dedication. I’m currently learning C++, Data Structures, and Web Development. I love creating meaningful and user-friendly digital solutions. My goal is to grow as a developer while enjoying every step of the learning process.
+    </p>
+  </section>
+
+  <section id="education" class="education-section">
+    <h3>🎓 Education</h3>
+    <table>
+      <tr>
+        <th>Institute</th>
+        <th>Degree</th>
+        <th>Year</th>
+      </tr>
+      <tr>
+        <td>Green International University</td>
+        <td>BS Software Engineering</td>
+        <td>2023 - Present</td>
+      </tr>
+      <tr>
+        <td>Superior College</td>
+        <td>FSc (Pre-Medical)</td>
+        <td>2021 - 2023</td>
+      </tr>
+    </table>
+  </section>
+
+  <section id="skills">
+    <h3>Skills</h3>
+    <div class="skills-list">
+      <div class="skill-card">C++ Programming</div>
+      <div class="skill-card">Graphic Designing</div>
+      <div class="skill-card">Web Development</div>
+      <div class="skill-card">Communication</div>
+      <div class="skill-card">Team Work</div>
+      <div class="skill-card">Content Writing</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h3>Projects</h3>
+    <div class="projects-list">
+      <div class="project-card">Portfolio Website</div>
+      <div class="project-card">House keeping Project</div>
+      <div class="project-card">Flight Management</div>
+      <div class="project-card">Book Website</div>
+    </div>
+  </section>
+
+ <section id="contact">
+  <h3>Contact</h3>
+  <div class="contact-details">
+    <div>
+      <strong>Email:</strong>
+      <a href="https://mail.google.com/mail/?view=cm&to=ayeshasoftware1@gmail.com" target="_blank">ayeshasoftware1@gmail.com</a><br>
+      <strong>Instagram:</strong>
+      <a href="https://instagram.com/iitx_aysha" target="_blank">@iitx_aysha</a>
+    </div>
+    <div>
+      <strong>GitHub:</strong> <a href="https://github.com/aisha-code4" target="_blank">github.com/aisha-code4</a><br>
+      <strong>LinkedIn:</strong> <a href="#">linkedin.com/in/ayesha</a>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
